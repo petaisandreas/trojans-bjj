@@ -171,8 +171,8 @@ a:hover { text-decoration: underline; }
 .hero-logo-watermark img {
   width: min(60vw, 560px);
   height: auto;
-  opacity: .1;
-  filter: brightness(.5) grayscale(.3);
+  opacity: .32;
+  filter: brightness(1) grayscale(0);
 }
 
 .hero-overlay {
