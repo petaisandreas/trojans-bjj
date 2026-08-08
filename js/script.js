@@ -10,15 +10,33 @@ mainNav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => mainNav.classList.remove('open'));
 });
 
-// Pre-select coach when "Book Private Class" is clicked from a coach card
-document.querySelectorAll('[data-book-coach]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const coach = btn.getAttribute('data-book-coach');
-    const select = document.getElementById('session-type');
-    select.value = coach === 'eleftheria'
-      ? 'Private Class with Eleftheria'
-      : 'Private Class with Venizelos';
+// Coach cards -> profile dialog
+const coachDialog = document.getElementById('coach-dialog');
+const coachDialogBook = document.getElementById('coach-dialog-book');
+
+document.querySelectorAll('.coach-card').forEach(card => {
+  card.querySelector('[data-meet]').addEventListener('click', () => {
+    document.getElementById('coach-dialog-name').textContent = card.dataset.coachName;
+    document.getElementById('coach-dialog-role').textContent = card.dataset.coachRole;
+    document.getElementById('coach-dialog-bio').innerHTML = card.querySelector('.coach-bio').innerHTML;
+    coachDialogBook.setAttribute('data-book-coach', card.dataset.coachName);
+    coachDialog.showModal();
   });
+});
+
+coachDialog.querySelector('[data-close-dialog]').addEventListener('click', () => coachDialog.close());
+// Click outside the panel closes it too
+coachDialog.addEventListener('click', e => {
+  if (e.target === coachDialog) coachDialog.close();
+});
+
+// Pre-select the coach when "Book Private Class" is clicked
+coachDialogBook.addEventListener('click', () => {
+  const coach = coachDialogBook.getAttribute('data-book-coach');
+  const select = document.getElementById('session-type');
+  const value = `Private Class with ${coach}`;
+  if ([...select.options].some(opt => opt.value === value)) select.value = value;
+  coachDialog.close();
 });
 
 // Booking form -> WhatsApp

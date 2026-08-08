@@ -265,32 +265,116 @@ a:hover { text-decoration: underline; }
 /* Coaches */
 .coach-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
 }
+
+/* Card is one full-bleed photo with the name + button over its bottom edge */
 .coach-card {
   position: relative;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
   border-radius: var(--radius);
-  padding: 24px;
-  text-align: center;
+  border: 1px solid var(--border);
+  background: var(--surface);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .coach-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12);
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
 }
-.coach-photo-frame {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 20px;
+
+.coach-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.coach-photo.missing { display: none; }
+
+/* Shown only until a real photo is dropped in — initial on the brand green */
+.coach-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.92);
+  background: linear-gradient(160deg, var(--green), var(--green-dark));
+}
+.coach-photo.missing ~ .coach-fallback { display: flex; }
+
+.coach-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 14px 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.55) 35%, rgba(0,0,0,.88));
+  text-align: center;
+}
+.coach-overlay h3 {
+  color: var(--white);
+  font-size: 1.15rem;
+  margin: 0 0 .15em;
+}
+
+.coach-role {
+  color: var(--green-light);
+  text-transform: uppercase;
+  font-size: .72rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.btn-meet {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: .76rem;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  box-shadow: none;
+}
+.btn-meet:hover { background: var(--green-dark); transform: none; box-shadow: none; }
+
+/* Coach profile dialog */
+/* No position override here — the UA's fixed positioning is what centres the
+   modal, and it already contains the absolutely-positioned close button. */
+.coach-dialog {
+  border: none;
   border-radius: var(--radius);
-  overflow: hidden;
-  border: 3px solid var(--green);
+  padding: 0;
+  width: min(420px, calc(100% - 40px));
+  background: var(--bg);
+  color: var(--text);
+  border-top: 4px solid var(--green);
+  box-shadow: 0 20px 50px rgba(0,0,0,.3);
 }
-.coach-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-.coach-title { color: var(--green-dark); text-transform: uppercase; font-size: .85rem; letter-spacing: 1px; margin-top: -.3em; }
+.coach-dialog::backdrop { background: rgba(0,0,0,.6); }
+.coach-dialog-inner { padding: 30px 26px 26px; text-align: center; }
+.coach-dialog-inner h3 { margin-bottom: .1em; }
+.coach-dialog-inner .coach-role { color: var(--green-dark); margin-bottom: 1.2em; }
+.coach-dialog-inner p { margin: 0 0 1.4em; }
+.coach-dialog-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--grey);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.coach-dialog-close:hover { color: var(--text); }
 
 /* Generic photo placeholder */
 .photo-frame { position: relative; background: var(--surface); }
@@ -320,7 +404,6 @@ a:hover { text-decoration: underline; }
 }
 
 .hero-photo-frame:has(img.missing),
-.coach-photo-frame:has(img.missing),
 .camp-photo-frame:has(img.missing) {
   display: none;
 }

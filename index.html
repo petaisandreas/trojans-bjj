@@ -82,27 +82,57 @@
     <h2>Our Coaches</h2>
     <div class="coach-grid">
 
-      <div class="coach-card">
-        <div class="photo-frame coach-photo-frame">
-          <img src="images/coach-eleftheria.png" alt="Coach Eleftheria" onerror="this.classList.add('missing')">
-          <div class="photo-placeholder">&#128247; Add photo:<br><code>images/coach-eleftheria.png</code></div>
+      <article class="coach-card" data-coach-name="Eleftheria" data-coach-role="Certified Black Belt">
+        <img class="coach-photo" src="images/coach-eleftheria.png" alt="Coach Eleftheria" onerror="this.classList.add('missing')">
+        <span class="coach-fallback" aria-hidden="true">E</span>
+        <div class="coach-overlay">
+          <h3>Eleftheria</h3>
+          <p class="coach-role">Certified Black Belt</p>
+          <button type="button" class="btn btn-meet" data-meet>Meet Eleftheria</button>
         </div>
-        <h3>Eleftheria</h3>
-        <p class="coach-title">Certified Black Belt</p>
-        <p>Bio coming soon &mdash; send over Eleftheria's belt rank, achievements and coaching focus and it will go here.</p>
-        <a href="#booking" class="btn btn-small" data-book-coach="eleftheria">Book Private Class</a>
-      </div>
+        <div class="coach-bio" hidden>
+          <p>Full bio and achievements coming soon.</p>
+        </div>
+      </article>
 
-      <div class="coach-card">
-        <div class="photo-frame coach-photo-frame">
-          <img src="images/coach-venizelos.png" alt="Coach Venizelos" onerror="this.classList.add('missing')">
-          <div class="photo-placeholder">&#128247; Add photo:<br><code>images/coach-venizelos.png</code></div>
+      <article class="coach-card" data-coach-name="Venizelos" data-coach-role="Certified Black Belt">
+        <img class="coach-photo" src="images/coach-venizelos.png" alt="Coach Venizelos" onerror="this.classList.add('missing')">
+        <span class="coach-fallback" aria-hidden="true">V</span>
+        <div class="coach-overlay">
+          <h3>Venizelos</h3>
+          <p class="coach-role">Certified Black Belt</p>
+          <button type="button" class="btn btn-meet" data-meet>Meet Venizelos</button>
         </div>
-        <h3>Venizelos</h3>
-        <p class="coach-title">Certified Black Belt</p>
-        <p>Bio coming soon &mdash; send over Venizelos's belt rank, achievements and coaching focus and it will go here.</p>
-        <a href="#booking" class="btn btn-small" data-book-coach="venizelos">Book Private Class</a>
-      </div>
+        <div class="coach-bio" hidden>
+          <p>Full bio and achievements coming soon.</p>
+        </div>
+      </article>
+
+      <article class="coach-card" data-coach-name="Louis" data-coach-role="BJJ Black Belt">
+        <img class="coach-photo" src="images/coach-louis.png" alt="Coach Louis" onerror="this.classList.add('missing')">
+        <span class="coach-fallback" aria-hidden="true">L</span>
+        <div class="coach-overlay">
+          <h3>Louis</h3>
+          <p class="coach-role">BJJ Black Belt</p>
+          <button type="button" class="btn btn-meet" data-meet>Meet Louis</button>
+        </div>
+        <div class="coach-bio" hidden>
+          <p>Full bio and achievements coming soon.</p>
+        </div>
+      </article>
+
+      <article class="coach-card" data-coach-name="Orestis" data-coach-role="Wrestling National Coach">
+        <img class="coach-photo" src="images/coach-orestis.png" alt="Coach Orestis" onerror="this.classList.add('missing')">
+        <span class="coach-fallback" aria-hidden="true">O</span>
+        <div class="coach-overlay">
+          <h3>Orestis</h3>
+          <p class="coach-role">Wrestling National Coach</p>
+          <button type="button" class="btn btn-meet" data-meet>Meet Orestis</button>
+        </div>
+        <div class="coach-bio" hidden>
+          <p>Full bio and achievements coming soon.</p>
+        </div>
+      </article>
 
     </div>
   </div>
@@ -250,8 +280,10 @@
           <option value="">Select an option&hellip;</option>
           <option value="Group Class (Trial)">Group Class (Trial)</option>
           <option value="Kids Class (Trial)">Kids Class (Trial)</option>
-          <option value="Private Class with Eleftheria">Private Class &mdash; Option 1: Eleftheria</option>
-          <option value="Private Class with Venizelos">Private Class &mdash; Option 2: Venizelos</option>
+          <option value="Private Class with Eleftheria">Private Class &mdash; Eleftheria</option>
+          <option value="Private Class with Venizelos">Private Class &mdash; Venizelos</option>
+          <option value="Private Class with Louis">Private Class &mdash; Louis</option>
+          <option value="Private Class with Orestis">Private Class &mdash; Orestis</option>
         </select>
       </div>
 
@@ -305,6 +337,16 @@
     <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">Instagram</a>
   </div>
 </footer>
+
+<dialog class="coach-dialog" id="coach-dialog" aria-labelledby="coach-dialog-name">
+  <button type="button" class="coach-dialog-close" data-close-dialog aria-label="Close">&times;</button>
+  <div class="coach-dialog-inner">
+    <h3 id="coach-dialog-name"></h3>
+    <p class="coach-role" id="coach-dialog-role"></p>
+    <div id="coach-dialog-bio"></div>
+    <a href="#booking" class="btn btn-primary btn-full" id="coach-dialog-book" data-book-coach>Book Private Class</a>
+  </div>
+</dialog>
 
 <script src="js/script.js"></script>
 </body>
