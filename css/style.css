@@ -59,8 +59,11 @@ a:hover { text-decoration: underline; }
   padding: 0 20px;
 }
 
-.section { padding: 70px 0; }
-.section:nth-of-type(even) { background: var(--surface); }
+.section { padding: 70px 0; background: var(--bg); }
+
+.section-light { background: var(--white); }
+.section-light h2 { color: var(--bg); }
+.section-light > .container > p { color: #4a4a4a; }
 
 /* Header */
 .site-header {
