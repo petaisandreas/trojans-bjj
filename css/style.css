@@ -144,14 +144,14 @@ a:hover { text-decoration: underline; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   background: linear-gradient(160deg, var(--green-dark), var(--bg));
 }
 
-.hero-photo-frame {
+.hero .hero-photo-frame {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -194,15 +194,7 @@ a:hover { text-decoration: underline; }
   color: var(--white);
   margin-bottom: .2em;
 }
-.hero-subtitle {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(.9rem, 2vw, 1.1rem);
-  letter-spacing: 6px;
-  color: var(--green-light);
-  text-transform: uppercase;
-  margin: 0 0 .6em;
-}
+.hero h1 span { color: var(--green-light); }
 
 .tagline {
   color: var(--white);
@@ -329,12 +321,6 @@ a:hover { text-decoration: underline; }
   border-radius: 3px;
   color: var(--green-light);
   font-size: .8rem;
-}
-
-.hero-photo-frame:has(img.missing),
-.coach-photo-frame:has(img.missing),
-.camp-photo-frame:has(img.missing) {
-  display: none;
 }
 
 /* Schedule */
