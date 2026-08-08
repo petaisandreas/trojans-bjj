@@ -14,11 +14,6 @@
   --max-width: 1100px;
   --font-display: 'Montserrat', 'Segoe UI', sans-serif;
   --font-body: 'Nunito', 'Segoe UI', Roboto, Arial, sans-serif;
-
-  --camp-bg: #ffffff;
-  --camp-bg-2: #fbf5e6;
-  --camp-pink: #c02a72;
-  --camp-gold: #9c7a1f;
 }
 
 * { box-sizing: border-box; }
@@ -403,8 +398,7 @@ a:hover { text-decoration: underline; }
   font-size: .8rem;
 }
 
-.hero-photo-frame:has(img.missing),
-.camp-photo-frame:has(img.missing) {
+.hero-photo-frame:has(img.missing) {
   display: none;
 }
 
@@ -452,94 +446,6 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--green);
 }
 .pill-openmat { border-color: var(--gold); }
-
-/* Golden Camp Pro */
-.golden-camp {
-  background: linear-gradient(160deg, var(--camp-bg), var(--camp-bg-2));
-  border-top: 3px solid var(--camp-gold);
-  border-bottom: 3px solid var(--camp-gold);
-}
-.golden-camp h2,
-.golden-camp .camp-heading {
-  color: var(--camp-gold);
-  border-left-color: var(--camp-pink);
-}
-.camp-eyebrow {
-  display: inline-block;
-  color: var(--camp-pink);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: .8rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.camp-intro { color: var(--grey); max-width: 700px; }
-
-.camp-editions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-.camp-edition {
-  background: var(--white);
-  border: 1px solid rgba(156,122,31,0.35);
-  border-radius: var(--radius);
-  padding: 24px;
-}
-.camp-edition p { color: var(--grey); }
-.camp-edition-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.camp-edition-head h3 { color: var(--text); margin: 0; }
-.camp-status {
-  font-size: .7rem;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  padding: 4px 10px;
-  border-radius: var(--radius);
-  font-weight: 700;
-}
-.camp-status-done { background: var(--camp-gold); color: var(--white); }
-.camp-status-upcoming { background: var(--camp-pink); color: var(--white); }
-
-.camp-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 16px;
-}
-.camp-photo-frame {
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface);
-}
-.camp-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-.camp-photo-frame .photo-placeholder {
-  border-color: rgba(156,122,31,0.4);
-  color: var(--grey);
-  font-size: .7rem;
-  min-height: 0;
-}
-.camp-photo-frame .photo-placeholder code { background: rgba(0,0,0,.06); color: var(--camp-gold); }
-
-.btn-camp {
-  display: inline-block;
-  margin-top: 10px;
-  background: var(--camp-pink);
-  color: var(--white);
-  padding: 12px 26px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: .85rem;
-}
-.btn-camp:hover { background: var(--camp-gold); color: var(--white); text-decoration: none; }
 
 /* Booking form */
 .booking-form {
@@ -622,5 +528,4 @@ input:focus, select:focus, textarea:focus {
   .main-nav a { text-align: center; }
   .nav-toggle { display: block; }
   .form-row-split { flex-direction: column; }
-  .camp-gallery { grid-template-columns: repeat(2, 1fr); }
 }
