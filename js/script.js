@@ -1,14 +1,20 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+// This file is shared by index.html and privacy.html, so anything specific to
+// one page is guarded - the privacy page has no booking form or coach cards.
+
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Mobile nav toggle
 const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
-navToggle.addEventListener('click', () => {
-  mainNav.classList.toggle('open');
-});
-mainNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mainNav.classList.remove('open'));
-});
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mainNav.classList.remove('open'));
+  });
+}
 
 // Coach cards -> expanding bio dropdown
 document.querySelectorAll('.coach-toggle').forEach(toggle => {
@@ -52,14 +58,17 @@ if (aboutSlideshow) {
 // Show the Revolut note only when Revolut is the chosen payment method
 const paymentSelect = document.getElementById('payment');
 const revolutHint = document.getElementById('revolut-hint');
-paymentSelect.addEventListener('change', () => {
-  revolutHint.hidden = paymentSelect.value !== 'Revolut';
-});
+if (paymentSelect && revolutHint) {
+  paymentSelect.addEventListener('change', () => {
+    revolutHint.hidden = paymentSelect.value !== 'Revolut';
+  });
+}
 
 // Booking form -> WhatsApp
 const WHATSAPP_NUMBER = '35797605817'; // TROJANS BJJ WhatsApp number
 
-document.getElementById('booking-form').addEventListener('submit', function (e) {
+const bookingForm = document.getElementById('booking-form');
+if (bookingForm) bookingForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const name = document.getElementById('name').value.trim();

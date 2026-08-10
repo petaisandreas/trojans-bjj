@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <!-- Bump ?v= whenever style.css or script.js changes so browsers fetch the new file
      instead of serving a cached copy. -->
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
@@ -303,6 +303,13 @@
         <textarea id="message" name="message" rows="3" placeholder="Anything we should know? Experience level, goals, etc."></textarea>
       </div>
 
+      <div class="form-row form-consent">
+        <label class="consent-label" for="privacy-accept">
+          <input type="checkbox" id="privacy-accept" name="privacy-accept" required>
+          <span>I have read and accept the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, and consent to TROJANS BJJ using the details above to contact me about this booking.</span>
+        </label>
+      </div>
+
       <button type="submit" class="btn btn-primary btn-full">Send Booking Request via WhatsApp</button>
       <p class="booking-alt">Prefer another way? Call/WhatsApp us directly at
         <a href="https://wa.me/35797605817">+357 97 605817</a>.
@@ -335,10 +342,13 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <p>&copy; <span id="year"></span> TROJANS BJJ. All rights reserved.</p>
-    <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">Instagram</a>
+    <span class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">Instagram</a>
+    </span>
   </div>
 </footer>
 
-<script src="js/script.js?v=2"></script>
+<script src="js/script.js?v=4"></script>
 </body>
 </html>

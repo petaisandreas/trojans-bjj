@@ -549,6 +549,50 @@ input:focus, select:focus, textarea:focus {
 
 .booking-alt { text-align: center; margin-top: 16px; font-size: .9rem; color: var(--grey); }
 
+/* Privacy consent checkbox */
+.form-consent { margin-bottom: 22px; }
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--grey);
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+.consent-label input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  padding: 0;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+.consent-label a { text-decoration: underline; }
+
+/* Privacy policy page */
+.legal { padding-top: 50px; }
+.legal .container { max-width: 780px; }
+.legal h3 {
+  font-size: 1.05rem;
+  color: var(--green-dark);
+  margin-top: 1.8em;
+}
+.legal p, .legal li { color: var(--grey); }
+.legal ul { padding-left: 1.2em; margin: 0 0 1em; }
+.legal li { margin-bottom: .4em; }
+.legal-updated {
+  font-size: .85rem;
+  margin-top: -.8em;
+  margin-bottom: 2em;
+}
+.legal-back { margin-top: 3em; font-weight: 700; }
+
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
 /* Contact */
 .contact-grid {
   display: grid;
