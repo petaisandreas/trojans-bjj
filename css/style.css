@@ -222,8 +222,20 @@ a:hover { text-decoration: underline; }
 .btn-primary { background: var(--green); color: var(--white); }
 .btn-primary:hover { background: var(--green-dark); }
 
+/* See-through with a white edge; fills white with green text once engaged.
+   :active carries the same treatment to taps, where there is no hover. */
 .btn-outline { border-color: var(--white); color: var(--white); }
-.btn-outline:hover { background: var(--white); color: var(--green-dark); }
+.btn-outline:hover,
+.btn-outline:focus-visible,
+.btn-outline:active { background: var(--white); color: var(--green-dark); }
+
+/* Wide single call-to-action in the hero */
+.btn-hero {
+  width: min(360px, 100%);
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1rem;
+}
 
 .btn-small {
   padding: 8px 18px;
