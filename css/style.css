@@ -236,6 +236,37 @@ a:hover { text-decoration: underline; }
 .btn-full { width: 100%; border: none; }
 
 /* About */
+.about { position: relative; overflow: hidden; }
+
+.about-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.about-slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.about-slideshow img.is-active { opacity: 1; }
+.about-slideshow img.missing { display: none; }
+
+/* Keeps black body copy readable over whatever photo is showing */
+.about-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(255,255,255,.82);
+}
+/* No photos loaded yet - drop the scrim so the plain section shows through */
+.about-slideshow.is-empty ~ .about-scrim { background: none; }
+
+.about > .container { position: relative; z-index: 2; }
+
 .about-highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -243,7 +274,7 @@ a:hover { text-decoration: underline; }
   margin-top: 40px;
 }
 .highlight-card {
-  background: var(--surface-2);
+  background: rgba(255,255,255,.92);
   border: 1px solid var(--border);
   border-left: 4px solid var(--green);
   padding: 24px;
@@ -262,21 +293,25 @@ a:hover { text-decoration: underline; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 24px;
+  /* start, not stretch, so an open card grows without stretching its row */
+  align-items: start;
 }
 
-/* Card is one full-bleed photo with the name + button over its bottom edge */
 .coach-card {
-  position: relative;
-  aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: var(--surface);
-  transition: transform .2s ease, box-shadow .2s ease;
+  background: var(--surface-2);
+  transition: box-shadow .2s ease;
 }
-.coach-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+.coach-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,.15); }
+
+/* The photo fills its own rectangle; the card below it can grow */
+.coach-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--surface);
 }
 
 .coach-photo {
@@ -288,7 +323,7 @@ a:hover { text-decoration: underline; }
 }
 .coach-photo.missing { display: none; }
 
-/* Shown only until a real photo is dropped in — initial on the brand green */
+/* Shown only until a real photo is dropped in - initial on the brand green */
 .coach-fallback {
   position: absolute;
   inset: 0;
@@ -324,52 +359,63 @@ a:hover { text-decoration: underline; }
   font-size: .72rem;
   letter-spacing: 1px;
   font-weight: 700;
-  margin: 0 0 12px;
+  margin: 0;
 }
 
-.btn-meet {
-  display: block;
+/* Dropdown toggle */
+.coach-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
-  padding: 10px 12px;
-  font-size: .76rem;
+  padding: 12px 14px;
+  border: none;
   background: var(--green);
   color: var(--white);
-  border: none;
-  box-shadow: none;
-}
-.btn-meet:hover { background: var(--green-dark); transform: none; box-shadow: none; }
-
-/* Coach profile dialog */
-/* No position override here — the UA's fixed positioning is what centres the
-   modal, and it already contains the absolutely-positioned close button. */
-.coach-dialog {
-  border: none;
-  border-radius: var(--radius);
-  padding: 0;
-  width: min(420px, calc(100% - 40px));
-  background: var(--bg);
-  color: var(--text);
-  border-top: 4px solid var(--green);
-  box-shadow: 0 20px 50px rgba(0,0,0,.3);
-}
-.coach-dialog::backdrop { background: rgba(0,0,0,.6); }
-.coach-dialog-inner { padding: 30px 26px 26px; text-align: center; }
-.coach-dialog-inner h3 { margin-bottom: .1em; }
-.coach-dialog-inner .coach-role { color: var(--green-dark); margin-bottom: 1.2em; }
-.coach-dialog-inner p { margin: 0 0 1.4em; }
-.coach-dialog-close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  background: none;
-  border: none;
-  font-size: 1.7rem;
-  line-height: 1;
-  color: var(--grey);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .76rem;
   cursor: pointer;
-  padding: 4px 8px;
+  transition: background .15s ease;
 }
-.coach-dialog-close:hover { color: var(--text); }
+.coach-toggle:hover { background: var(--green-dark); }
+
+.coach-chevron {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform .2s ease;
+}
+.coach-toggle[aria-expanded="true"] .coach-chevron {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.coach-bio {
+  padding: 18px 18px 20px;
+  border-top: 1px solid var(--border);
+  text-align: left;
+}
+.coach-bio p { margin: 0 0 1em; font-size: .92rem; }
+.coach-bio h4 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .72rem;
+  color: var(--green-dark);
+  margin: 0 0 .6em;
+}
+.coach-bio ul {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: .9rem;
+  color: var(--grey);
+}
+.coach-bio li { margin-bottom: .35em; }
 
 /* Generic photo placeholder */
 .photo-frame { position: relative; background: var(--surface); }
@@ -476,6 +522,14 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--green);
+}
+
+.form-hint {
+  margin: 2px 0 0;
+  font-size: .8rem;
+  color: var(--grey);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .booking-alt { text-align: center; margin-top: 16px; font-size: .9rem; color: var(--grey); }

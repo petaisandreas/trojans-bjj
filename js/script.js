@@ -10,33 +10,50 @@ mainNav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => mainNav.classList.remove('open'));
 });
 
-// Coach cards -> profile dialog
-const coachDialog = document.getElementById('coach-dialog');
-const coachDialogBook = document.getElementById('coach-dialog-book');
-
-document.querySelectorAll('.coach-card').forEach(card => {
-  card.querySelector('[data-meet]').addEventListener('click', () => {
-    document.getElementById('coach-dialog-name').textContent = card.dataset.coachName;
-    document.getElementById('coach-dialog-role').textContent = card.dataset.coachRole;
-    document.getElementById('coach-dialog-bio').innerHTML = card.querySelector('.coach-bio').innerHTML;
-    coachDialogBook.setAttribute('data-book-coach', card.dataset.coachName);
-    coachDialog.showModal();
+// Coach cards -> expanding bio dropdown
+document.querySelectorAll('.coach-toggle').forEach(toggle => {
+  const bio = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    bio.hidden = isOpen;
   });
 });
 
-coachDialog.querySelector('[data-close-dialog]').addEventListener('click', () => coachDialog.close());
-// Click outside the panel closes it too
-coachDialog.addEventListener('click', e => {
-  if (e.target === coachDialog) coachDialog.close();
-});
+// About section background slideshow
+const aboutSlideshow = document.getElementById('about-slideshow');
+if (aboutSlideshow) {
+  const startSlideshow = () => {
+    const slides = [...aboutSlideshow.querySelectorAll('img')]
+      .filter(img => !img.classList.contains('missing') && img.naturalWidth > 0);
 
-// Pre-select the coach when "Book Private Class" is clicked
-coachDialogBook.addEventListener('click', () => {
-  const coach = coachDialogBook.getAttribute('data-book-coach');
-  const select = document.getElementById('session-type');
-  const value = `Private Class with ${coach}`;
-  if ([...select.options].some(opt => opt.value === value)) select.value = value;
-  coachDialog.close();
+    if (!slides.length) {
+      // Nothing to show - let the plain section background stand in
+      aboutSlideshow.classList.add('is-empty');
+      return;
+    }
+
+    slides[0].classList.add('is-active');
+    if (slides.length < 2) return;
+
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, 5000);
+  };
+
+  // Wait for the images to settle so we only cycle the ones that actually loaded
+  if (document.readyState === 'complete') startSlideshow();
+  else window.addEventListener('load', startSlideshow);
+}
+
+// Show the Revolut note only when Revolut is the chosen payment method
+const paymentSelect = document.getElementById('payment');
+const revolutHint = document.getElementById('revolut-hint');
+paymentSelect.addEventListener('change', () => {
+  revolutHint.hidden = paymentSelect.value !== 'Revolut';
 });
 
 // Booking form -> WhatsApp
@@ -48,6 +65,7 @@ document.getElementById('booking-form').addEventListener('submit', function (e) 
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const sessionType = document.getElementById('session-type').value;
+  const payment = document.getElementById('payment').value;
   const date = document.getElementById('date').value;
   const time = document.getElementById('time').value;
   const message = document.getElementById('message').value.trim();
@@ -57,6 +75,7 @@ document.getElementById('booking-form').addEventListener('submit', function (e) 
     `Name: ${name}`,
     `Phone: ${phone}`,
     `Session: ${sessionType}`,
+    `Payment: ${payment}`,
   ];
   if (date) lines.push(`Preferred date: ${date}`);
   if (time) lines.push(`Preferred time: ${time}`);
