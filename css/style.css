@@ -167,6 +167,9 @@ a:hover { text-decoration: underline; }
   z-index: 2;
   text-align: center;
   width: 100%;
+  /* The hero centres its content; this bottom padding lifts the block
+     above dead centre so it sits higher in the frame. */
+  padding-bottom: clamp(50px, 16vh, 170px);
 }
 
 /* Hero text stays white — it sits over the dark photo overlay */
