@@ -270,17 +270,23 @@ a:hover { text-decoration: underline; }
 .about-slideshow img.is-active { opacity: 1; }
 .about-slideshow img.missing { display: none; }
 
-/* Keeps black body copy readable over whatever photo is showing */
+/* Light veil - just enough to keep black body copy readable over the photos */
 .about-scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.55);
 }
 /* No photos loaded yet - drop the scrim so the plain section shows through */
 .about-slideshow.is-empty ~ .about-scrim { background: none; }
 
 .about > .container { position: relative; z-index: 2; }
+
+/* Soft white halo so the intro text stays crisp against a busy photo */
+.about > .container > h2,
+.about > .container > p {
+  text-shadow: 0 1px 3px rgba(255,255,255,.95), 0 0 14px rgba(255,255,255,.85);
+}
 
 .about-highlights {
   display: grid;
@@ -289,7 +295,7 @@ a:hover { text-decoration: underline; }
   margin-top: 40px;
 }
 .highlight-card {
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.95);
   border: 1px solid var(--border);
   border-left: 4px solid var(--green);
   padding: 24px;
