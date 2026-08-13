@@ -47,7 +47,7 @@ if (aboutSlideshow) {
       slides[i].classList.remove('is-active');
       i = (i + 1) % slides.length;
       slides[i].classList.add('is-active');
-    }, 5000);
+    }, 2500);
   };
 
   // Wait for the images to settle so we only cycle the ones that actually loaded

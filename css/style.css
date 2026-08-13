@@ -273,7 +273,8 @@ a:hover { text-decoration: underline; }
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  /* Kept well under the 2.5s hold so each photo settles before the next fade */
+  transition: opacity .7s ease;
 }
 .about-slideshow img.is-active { opacity: 1; }
 .about-slideshow img.missing { display: none; }
