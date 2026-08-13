@@ -149,6 +149,29 @@ a:hover { text-decoration: underline; }
   background: #000;
 }
 
+/* Photo backdrop. Fills the section and is heavily darkened, so it reads as
+   atmosphere behind the wordmark rather than a portrait. That matters on
+   phones: a tall viewport crops a wide photo down to a narrow centre strip,
+   and at this darkness the crop stops being noticeable. */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.78));
+}
+
 /* Faded logo watermark. Sized rather than cover-cropped: it is artwork, not a
    photo, so it must scale down whole on narrow screens instead of being cut off.
    The bottom padding matches .hero-content so the mark sits behind the text. */
