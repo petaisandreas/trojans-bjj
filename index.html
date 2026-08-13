@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <!-- Bump ?v= whenever style.css or script.js changes so browsers fetch the new file
      instead of serving a cached copy. -->
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -36,10 +36,9 @@
 </header>
 
 <section id="home" class="hero">
-  <div class="photo-frame hero-photo-frame">
-    <img src="images/hero-bg.jpg?v=2" alt="TROJANS BJJ training" onerror="this.classList.add('missing')">
+  <div class="hero-watermark" aria-hidden="true">
+    <img src="images/logo_changed.png?v=1" alt="">
   </div>
-  <div class="hero-overlay"></div>
   <div class="container hero-content">
     <h1>TROJANS</h1>
     <p class="hero-subtitle">Brazilian Jiu-Jitsu</p>
@@ -103,7 +102,6 @@
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-eleftheria" hidden>
-          <p>Description coming soon.</p>
           <h4>Achievements</h4>
           <ul>
             <li>ADCC Veteran &amp; ADCC European Trials Champion</li>
@@ -129,11 +127,12 @@
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-venizelos" hidden>
-          <p>Description coming soon.</p>
           <h4>Achievements</h4>
           <ul>
-            <li>JJIF European No-Gi Vice Champion</li>
-            <li>Cyprus &amp; Greece National Champion</li>
+            <li>JJIF European No-Gi Vice Champion 2025</li>
+            <li>JJIF European No-Gi Vice Champion 2024</li>
+            <li>Cyprus National Champion</li>
+            <li>Greece National Champion</li>
           </ul>
         </div>
       </article>
@@ -152,7 +151,6 @@
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-louis" hidden>
-          <p>Description coming soon.</p>
           <h4>Achievements</h4>
           <ul>
             <li>MMA fighter and Coach</li>
@@ -174,7 +172,6 @@
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-orestis" hidden>
-          <p>Description coming soon.</p>
           <h4>Achievements</h4>
           <ul>
             <li>Wrestling National Coach</li>
@@ -323,15 +320,20 @@
     <h2>Visit Us</h2>
     <div class="contact-grid">
       <div class="contact-info">
-        <p><strong>Location:</strong> Larnaca, Cyprus <br><small>(exact address to be added)</small></p>
+        <p><strong>Location:</strong>
+          <a href="https://www.google.com/maps?cid=5065393378060084863" target="_blank" rel="noopener">Ιάκωβου Πατάτσου, Αραδίππου, Λάρνακα 7101</a>
+          <br><small>Larnaca, Cyprus &mdash; tap the address for directions</small></p>
         <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/35797605817">+357 97 605817</a></p>
         <p><strong>Instagram:</strong> <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">@trojansbjj</a></p>
         <p><strong>Payments:</strong> Cash or Revolut</p>
       </div>
       <div class="map-wrap">
+        <!-- Must be an embed URL: a normal maps.google.com page URL is blocked
+             from loading in an iframe and renders blank. cid= is the place ID
+             taken from the share link, so the pin lands exactly on the gym. -->
         <iframe
-          title="Larnaca map"
-          src="https://www.google.com/maps?q=Larnaca,Cyprus&output=embed"
+          title="Map showing TROJANS BJJ in Aradippou, Larnaca"
+          src="https://www.google.com/maps?cid=5065393378060084863&output=embed"
           width="100%" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -349,6 +351,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=5"></script>
+<script src="js/script.js?v=6"></script>
 </body>
 </html>
