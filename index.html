@@ -5,15 +5,110 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TROJANS BJJ | Brazilian Jiu-Jitsu Academy, Larnaca</title>
 <meta name="description" content="TROJANS BJJ - Certified Brazilian Jiu-Jitsu coaches in Larnaca, Cyprus. Adult and kids classes, private lessons booking.">
+
+<!-- Rich preview card when the link is shared on WhatsApp, Instagram, Facebook, etc. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TROJANS BJJ">
+<meta property="og:title" content="TROJANS BJJ | Brazilian Jiu-Jitsu Academy, Larnaca">
+<meta property="og:description" content="Certified Brazilian Jiu-Jitsu coaches in Larnaca, Cyprus. Adult and kids classes, private lessons, trial bookings.">
+<meta property="og:image" content="https://petaisandreas.github.io/trojans-bjj/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://petaisandreas.github.io/trojans-bjj/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TROJANS BJJ | Brazilian Jiu-Jitsu Academy, Larnaca">
+<meta name="twitter:description" content="Certified Brazilian Jiu-Jitsu coaches in Larnaca, Cyprus. Adult and kids classes, private lessons, trial bookings.">
+<meta name="twitter:image" content="https://petaisandreas.github.io/trojans-bjj/images/og-image.jpg">
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%8B%3C/text%3E%3C/svg%3E">
+
+<!-- Installable app: lets a phone add this site to its home screen with its
+     own icon, opening full-screen without browser chrome. -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2f7d4d">
+<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TROJANS BJJ">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Visitor analytics (Google Analytics 4) - INACTIVE until a real Measurement
+     ID replaces GA_MEASUREMENT_ID below. Nothing is sent anywhere until then.
+     To activate: create a free account at analytics.google.com, add this site
+     as a "Web" property, copy the ID it gives you (looks like G-XXXXXXXXXX),
+     and replace both occurrences of GA_MEASUREMENT_ID on this page (and in
+     privacy.html) with it. -->
+<script>
+  const GA_MEASUREMENT_ID = 'GA_MEASUREMENT_ID';
+  if (GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID') {
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(gaScript);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID);
+  }
+</script>
 <!-- Bump ?v= whenever style.css or script.js changes so browsers fetch the new file
      instead of serving a cached copy. -->
-<link rel="stylesheet" href="css/style.css?v=10">
+<link rel="stylesheet" href="css/style.css?v=12">
+
+<!-- Local business data for Google Search/Maps rich results. Class-time
+     blocks come straight from the schedule table above, not invented.
+     Saturday's Open Mat has no listed end time anywhere on the page, so it
+     is left out here too rather than guessing one - see the note left for
+     the site owner about adding it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "TROJANS BJJ",
+  "alternateName": "Trojans Gym",
+  "description": "Brazilian Jiu-Jitsu academy in Larnaca, Cyprus offering adult and kids classes, private lessons, and trial bookings.",
+  "url": "https://petaisandreas.github.io/trojans-bjj/",
+  "image": "https://petaisandreas.github.io/trojans-bjj/images/og-image.jpg",
+  "telephone": "+35797605817",
+  "sameAs": ["https://www.instagram.com/trojansbjj"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ιάκωβου Πατάτσου",
+    "addressLocality": "Αραδίππου",
+    "addressRegion": "Larnaca",
+    "postalCode": "7101",
+    "addressCountry": "CY"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday",    "opens": "16:00", "closes": "17:00", "description": "Kids 5-7" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday",    "opens": "17:00", "closes": "18:00", "description": "Kids 8-12" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday",    "opens": "18:30", "closes": "20:00", "description": "Gi" },
+
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday",   "opens": "07:00", "closes": "08:00", "description": "No Gi" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday",   "opens": "18:00", "closes": "19:00", "description": "Beginners No Gi" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday",   "opens": "19:00", "closes": "20:30", "description": "No Gi" },
+
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "16:00", "closes": "17:00", "description": "Kids 5-7" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "17:00", "closes": "18:00", "description": "Kids 8-12" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "19:00", "closes": "20:30", "description": "Wrestling" },
+
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday",  "opens": "07:00", "closes": "08:00", "description": "No Gi" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday",  "opens": "17:00", "closes": "18:00", "description": "Kids 3-5" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday",  "opens": "18:30", "closes": "20:00", "description": "Gi" },
+
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",    "opens": "17:00", "closes": "18:00", "description": "Kids Mixed" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",    "opens": "18:00", "closes": "19:00", "description": "Beginners No Gi" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",    "opens": "19:00", "closes": "20:30", "description": "No Gi" },
+
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday",  "opens": "09:00", "closes": "10:00", "description": "Kids 3-5" }
+  ]
+}
+</script>
 </head>
-<body>
+<body data-i18n-doc-title="doc-title" data-i18n-doc-description="doc-description">
 
 <header class="site-header">
   <div class="container header-inner">
@@ -25,13 +120,17 @@
       <span class="logo-text">TROJANS<span>BJJ</span></span>
     </a>
     <nav class="main-nav" id="main-nav">
-      <a href="#about">About</a>
-      <a href="#coaches">Coaches</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#booking">Book a Class</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-i18n="nav-about">About</a>
+      <a href="#coaches" data-i18n="nav-coaches">Coaches</a>
+      <a href="#schedule" data-i18n="nav-schedule">Schedule</a>
+      <a href="#booking" data-i18n="nav-booking">Book a Class</a>
+      <a href="#contact" data-i18n="nav-contact">Contact</a>
     </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="el">&Epsilon;&Lambda;</button>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" data-i18n-aria-label="nav-toggle-label">&#9776;</button>
   </div>
 </header>
 
@@ -42,10 +141,10 @@
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-content">
     <h1>TROJANS</h1>
-    <p class="hero-subtitle">Brazilian Jiu-Jitsu</p>
-    <p class="tagline">Where chaos meets precision</p>
+    <p class="hero-subtitle" data-i18n="hero-subtitle">Brazilian Jiu-Jitsu</p>
+    <p class="tagline" data-i18n="hero-tagline">Where chaos meets precision</p>
     <div class="hero-buttons">
-      <a href="#booking" class="btn btn-outline btn-hero">Book a Class</a>
+      <a href="#booking" class="btn btn-outline btn-hero" data-i18n="hero-book">Book a Class</a>
     </div>
   </div>
 </section>
@@ -68,8 +167,8 @@
   </div>
   <div class="about-scrim" aria-hidden="true"></div>
   <div class="container">
-    <h2>About Our Academy</h2>
-    <p>
+    <h2 data-i18n="about-heading">About Our Academy</h2>
+    <p data-i18n="about-body">
       TROJANS BJJ is a Brazilian Jiu-Jitsu academy in Larnaca, Cyprus, led by certified coaches
       dedicated to teaching authentic, effective BJJ in a supportive, disciplined environment.
       We offer classes for adults of all levels, as well as a dedicated kids program starting from
@@ -78,16 +177,16 @@
     </p>
     <div class="about-highlights">
       <div class="highlight-card">
-        <h3>Adults &mdash; All Levels</h3>
-        <p>From complete beginners to competitors, our adult classes cover fundamentals, technique, drilling and live rolling.</p>
+        <h3 data-i18n="about-card1-title">Adults &mdash; All Levels</h3>
+        <p data-i18n="about-card1-body">From complete beginners to competitors, our adult classes cover fundamentals, technique, drilling and live rolling.</p>
       </div>
       <div class="highlight-card">
-        <h3>Kids Program (3yo+)</h3>
-        <p>A fun, structured program that builds coordination, confidence and discipline for young athletes.</p>
+        <h3 data-i18n="about-card2-title">Kids Program (3yo+)</h3>
+        <p data-i18n="about-card2-body">A fun, structured program that builds coordination, confidence and discipline for young athletes.</p>
       </div>
       <div class="highlight-card">
-        <h3>Private Lessons</h3>
-        <p>One-on-one coaching with Eleftheria or Venizelos, tailored to your goals and pace.</p>
+        <h3 data-i18n="about-card3-title">Private Lessons</h3>
+        <p data-i18n="about-card3-body">One-on-one coaching with Eleftheria or Venizelos, tailored to your goals and pace.</p>
       </div>
     </div>
   </div>
@@ -95,7 +194,7 @@
 
 <section id="coaches" class="section coaches">
   <div class="container">
-    <h2>Our Coaches</h2>
+    <h2 data-i18n="coaches-heading">Our Coaches</h2>
     <div class="coach-grid">
 
       <article class="coach-card">
@@ -104,16 +203,16 @@
           <span class="coach-fallback" aria-hidden="true">E</span>
           <div class="coach-overlay">
             <h3>Eleftheria</h3>
-            <p class="coach-role">Certified Black Belt</p>
+            <p class="coach-role" data-i18n="role-eleftheria">Certified Black Belt</p>
           </div>
         </div>
         <button type="button" class="coach-toggle" aria-expanded="false" aria-controls="bio-eleftheria">
-          <span>Meet Eleftheria</span>
+          <span data-i18n="meet-eleftheria">Meet Eleftheria</span>
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-eleftheria" hidden>
-          <h4>Achievements</h4>
-          <ul>
+          <h4 data-i18n="achievements-heading">Achievements</h4>
+          <ul data-i18n="achievements-eleftheria">
             <li>ADCC Veteran &amp; ADCC European Trials Champion</li>
             <li>IBJJF European Champion &mdash; Weight and Absolute</li>
             <li>IBJJF Pan Champion</li>
@@ -129,16 +228,16 @@
           <span class="coach-fallback" aria-hidden="true">V</span>
           <div class="coach-overlay">
             <h3>Venizelos</h3>
-            <p class="coach-role">Certified Black Belt</p>
+            <p class="coach-role" data-i18n="role-venizelos">Certified Black Belt</p>
           </div>
         </div>
         <button type="button" class="coach-toggle" aria-expanded="false" aria-controls="bio-venizelos">
-          <span>Meet Venizelos</span>
+          <span data-i18n="meet-venizelos">Meet Venizelos</span>
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-venizelos" hidden>
-          <h4>Achievements</h4>
-          <ul>
+          <h4 data-i18n="achievements-heading">Achievements</h4>
+          <ul data-i18n="achievements-venizelos">
             <li>JJIF European No-Gi Vice Champion 2025</li>
             <li>JJIF European No-Gi Vice Champion 2024</li>
             <li>Cyprus National Champion</li>
@@ -153,16 +252,16 @@
           <span class="coach-fallback" aria-hidden="true">L</span>
           <div class="coach-overlay">
             <h3>Louis</h3>
-            <p class="coach-role">Certified Black Belt</p>
+            <p class="coach-role" data-i18n="role-louis">Certified Black Belt</p>
           </div>
         </div>
         <button type="button" class="coach-toggle" aria-expanded="false" aria-controls="bio-louis">
-          <span>Meet Louis</span>
+          <span data-i18n="meet-louis">Meet Louis</span>
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-louis" hidden>
-          <h4>Achievements</h4>
-          <ul>
+          <h4 data-i18n="achievements-heading">Achievements</h4>
+          <ul data-i18n="achievements-louis">
             <li>MMA fighter and Coach</li>
           </ul>
         </div>
@@ -174,16 +273,16 @@
           <span class="coach-fallback" aria-hidden="true">O</span>
           <div class="coach-overlay">
             <h3>Orestis</h3>
-            <p class="coach-role">Wrestling Coach</p>
+            <p class="coach-role" data-i18n="role-orestis">Wrestling Coach</p>
           </div>
         </div>
         <button type="button" class="coach-toggle" aria-expanded="false" aria-controls="bio-orestis">
-          <span>Meet Orestis</span>
+          <span data-i18n="meet-orestis">Meet Orestis</span>
           <span class="coach-chevron" aria-hidden="true"></span>
         </button>
         <div class="coach-bio" id="bio-orestis" hidden>
-          <h4>Achievements</h4>
-          <ul>
+          <h4 data-i18n="achievements-heading">Achievements</h4>
+          <ul data-i18n="achievements-orestis">
             <li>Member of the Greek National Wrestling Team, 1997&ndash;2009</li>
             <li>3rd place &mdash; Mediterranean Games 2009, 96&nbsp;kg</li>
             <li>1st place &mdash; Panhellenic Games 2008, 96&nbsp;kg</li>
@@ -199,57 +298,57 @@
 
 <section id="schedule" class="section schedule">
   <div class="container">
-    <h2>Class Schedule</h2>
-    <p class="schedule-note">Brazilian Jiu Jitsu Schedule 2025&ndash;26</p>
+    <h2 data-i18n="schedule-heading">Class Schedule</h2>
+    <p class="schedule-note" data-i18n="schedule-note">Brazilian Jiu Jitsu Schedule 2025&ndash;26</p>
 
     <div class="table-wrap">
       <table class="schedule-table schedule-grid">
         <thead>
           <tr>
-            <th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
+            <th data-i18n="day-mon">Monday</th><th data-i18n="day-tue">Tuesday</th><th data-i18n="day-wed">Wednesday</th><th data-i18n="day-thu">Thursday</th><th data-i18n="day-fri">Friday</th><th data-i18n="day-sat">Saturday</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td></td>
-            <td><span class="pill pill-nogi">No Gi<br>7&ndash;8</span></td>
+            <td><span class="pill pill-nogi" data-i18n="pill-nogi-0708">No Gi<br>7&ndash;8</span></td>
             <td></td>
-            <td><span class="pill pill-nogi">No Gi<br>7&ndash;8</span></td>
+            <td><span class="pill pill-nogi" data-i18n="pill-nogi-0708">No Gi<br>7&ndash;8</span></td>
             <td></td>
-            <td><span class="pill pill-kids">Kids 3&ndash;5<br>9&ndash;10</span></td>
+            <td><span class="pill pill-kids" data-i18n="pill-kids35-0910">Kids 3&ndash;5<br>9&ndash;10</span></td>
           </tr>
           <tr>
             <td></td><td></td><td></td><td></td><td></td>
-            <td><span class="pill pill-openmat">Open Mat<br>10 AM</span></td>
+            <td><span class="pill pill-openmat" data-i18n="pill-openmat">Open Mat<br>10 AM</span></td>
           </tr>
           <tr>
-            <td><span class="pill pill-kids">Kids 5&ndash;7<br>16:00&ndash;17:00</span></td>
+            <td><span class="pill pill-kids" data-i18n="pill-kids57-1617">Kids 5&ndash;7<br>16:00&ndash;17:00</span></td>
             <td></td>
-            <td><span class="pill pill-kids">Kids 5&ndash;7<br>16:00&ndash;17:00</span></td>
+            <td><span class="pill pill-kids" data-i18n="pill-kids57-1617">Kids 5&ndash;7<br>16:00&ndash;17:00</span></td>
             <td></td><td></td><td></td>
           </tr>
           <tr>
-            <td><span class="pill pill-kids">Kids 8&ndash;12<br>17:00&ndash;18:00</span></td>
+            <td><span class="pill pill-kids" data-i18n="pill-kids812-1718">Kids 8&ndash;12<br>17:00&ndash;18:00</span></td>
             <td></td>
-            <td><span class="pill pill-kids">Kids 8&ndash;12<br>17:00&ndash;18:00</span></td>
-            <td><span class="pill pill-kids">Kids 3&ndash;5<br>17:00&ndash;18:00</span></td>
-            <td><span class="pill pill-kids">Kids Mixed<br>17:00&ndash;18:00</span></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><span class="pill pill-gi">Gi<br>18:30&ndash;20:00</span></td>
-            <td><span class="pill pill-beginners">Beginners No Gi<br>18:00&ndash;19:00</span></td>
-            <td></td>
-            <td><span class="pill pill-gi">Gi<br>18:30&ndash;20:00</span></td>
-            <td><span class="pill pill-beginners">Beginners No Gi<br>18:00&ndash;19:00</span></td>
+            <td><span class="pill pill-kids" data-i18n="pill-kids812-1718">Kids 8&ndash;12<br>17:00&ndash;18:00</span></td>
+            <td><span class="pill pill-kids" data-i18n="pill-kids35-1718">Kids 3&ndash;5<br>17:00&ndash;18:00</span></td>
+            <td><span class="pill pill-kids" data-i18n="pill-kidsmixed-1718">Kids Mixed<br>17:00&ndash;18:00</span></td>
             <td></td>
           </tr>
           <tr>
+            <td><span class="pill pill-gi" data-i18n="pill-gi-1830-2000">Gi<br>18:30&ndash;20:00</span></td>
+            <td><span class="pill pill-beginners" data-i18n="pill-beginners-1800-1900">Beginners No Gi<br>18:00&ndash;19:00</span></td>
             <td></td>
-            <td><span class="pill pill-nogi">No Gi<br>19:00&ndash;20:30</span></td>
-            <td><span class="pill pill-wrestling">Wrestling<br>19:00&ndash;20:30</span></td>
+            <td><span class="pill pill-gi" data-i18n="pill-gi-1830-2000">Gi<br>18:30&ndash;20:00</span></td>
+            <td><span class="pill pill-beginners" data-i18n="pill-beginners-1800-1900">Beginners No Gi<br>18:00&ndash;19:00</span></td>
             <td></td>
-            <td><span class="pill pill-nogi">No Gi<br>19:00&ndash;20:30</span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span class="pill pill-nogi" data-i18n="pill-nogi-1900-2030">No Gi<br>19:00&ndash;20:30</span></td>
+            <td><span class="pill pill-wrestling" data-i18n="pill-wrestling-1900-2030">Wrestling<br>19:00&ndash;20:30</span></td>
+            <td></td>
+            <td><span class="pill pill-nogi" data-i18n="pill-nogi-1900-2030">No Gi<br>19:00&ndash;20:30</span></td>
             <td></td>
           </tr>
         </tbody>
@@ -260,69 +359,69 @@
 
 <section id="booking" class="section booking">
   <div class="container">
-    <h2>Book a Class</h2>
-    <p>Fill in the form below to request a spot in a group class or a private lesson. Submitting sends your request straight to us on WhatsApp so we can confirm availability.</p>
+    <h2 data-i18n="booking-heading">Book a Class</h2>
+    <p data-i18n="booking-intro">Fill in the form below to request a spot in a group class or a private lesson. Submitting sends your request straight to us on WhatsApp so we can confirm availability.</p>
 
     <form id="booking-form" class="booking-form">
       <div class="form-row">
-        <label for="name">Full Name</label>
+        <label for="name" data-i18n="label-name">Full Name</label>
         <input type="text" id="name" name="name" required>
       </div>
 
       <div class="form-row">
-        <label for="phone">Phone Number</label>
+        <label for="phone" data-i18n="label-phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" required placeholder="+357 ...">
       </div>
 
       <div class="form-row">
-        <label for="session-type">Session Type</label>
+        <label for="session-type" data-i18n="label-session-type">Session Type</label>
         <select id="session-type" name="session-type" required>
-          <option value="">Select an option&hellip;</option>
-          <option value="Group Class (Trial)">Group Class (Trial)</option>
-          <option value="Kids Class (Trial)">Kids Class (Trial)</option>
-          <option value="Private Class with Eleftheria">Private Class &mdash; Eleftheria</option>
-          <option value="Private Class with Venizelos">Private Class &mdash; Venizelos</option>
-          <option value="Private Class with Louis">Private Class &mdash; Louis</option>
-          <option value="Private Class with Orestis">Private Class &mdash; Orestis</option>
+          <option value="" data-i18n="option-select">Select an option&hellip;</option>
+          <option value="Group Class (Trial)" data-i18n="option-group-trial">Group Class (Trial)</option>
+          <option value="Kids Class (Trial)" data-i18n="option-kids-trial">Kids Class (Trial)</option>
+          <option value="Private Class with Eleftheria" data-i18n="option-private-eleftheria">Private Class &mdash; Eleftheria</option>
+          <option value="Private Class with Venizelos" data-i18n="option-private-venizelos">Private Class &mdash; Venizelos</option>
+          <option value="Private Class with Louis" data-i18n="option-private-louis">Private Class &mdash; Louis</option>
+          <option value="Private Class with Orestis" data-i18n="option-private-orestis">Private Class &mdash; Orestis</option>
         </select>
-        <p class="form-hint" id="trial-hint">Trial classes are for first-timers only &mdash; one per person.</p>
+        <p class="form-hint" id="trial-hint" data-i18n="trial-hint">Trial classes are for first-timers only &mdash; one per person.</p>
       </div>
 
       <div class="form-row">
-        <label for="payment">Payment Method</label>
+        <label for="payment" data-i18n="label-payment">Payment Method</label>
         <select id="payment" name="payment" required>
-          <option value="">Select an option&hellip;</option>
-          <option value="Cash">Cash (at the academy)</option>
-          <option value="Revolut">Revolut</option>
+          <option value="" data-i18n="option-select">Select an option&hellip;</option>
+          <option value="Cash" data-i18n="option-cash">Cash (at the academy)</option>
+          <option value="Revolut" data-i18n="option-revolut">Revolut</option>
         </select>
-        <p class="form-hint" id="revolut-hint" hidden>We&rsquo;ll send you our Revolut details on WhatsApp when we confirm your booking.</p>
+        <p class="form-hint" id="revolut-hint" hidden data-i18n="revolut-hint">We&rsquo;ll send you our Revolut details on WhatsApp when we confirm your booking.</p>
       </div>
 
       <div class="form-row form-row-split">
         <div>
-          <label for="date">Preferred Date</label>
+          <label for="date" data-i18n="label-date">Preferred Date</label>
           <input type="date" id="date" name="date">
         </div>
         <div>
-          <label for="time">Preferred Time</label>
+          <label for="time" data-i18n="label-time">Preferred Time</label>
           <input type="time" id="time" name="time">
         </div>
       </div>
 
       <div class="form-row">
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" rows="3" placeholder="Anything we should know? Experience level, goals, etc."></textarea>
+        <label for="message" data-i18n="label-message">Message (optional)</label>
+        <textarea id="message" name="message" rows="3" placeholder="Anything we should know? Experience level, goals, etc." data-i18n-placeholder="message-placeholder"></textarea>
       </div>
 
       <div class="form-row form-consent">
         <label class="consent-label" for="privacy-accept">
           <input type="checkbox" id="privacy-accept" name="privacy-accept" required>
-          <span>I have read and accept the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, and consent to TROJANS BJJ using the details above to contact me about this booking.</span>
+          <span data-i18n="consent-text">I have read and accept the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, and consent to TROJANS BJJ using the details above to contact me about this booking.</span>
         </label>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-full">Send Booking Request via WhatsApp</button>
-      <p class="booking-alt">Prefer another way? Call/WhatsApp us directly at
+      <button type="submit" class="btn btn-primary btn-full" data-i18n="submit-booking">Send Booking Request via WhatsApp</button>
+      <p class="booking-alt" data-i18n="booking-alt">Prefer another way? Call/WhatsApp us directly at
         <a href="https://wa.me/35797605817">+357 97 605817</a>.
       </p>
     </form>
@@ -331,15 +430,15 @@
 
 <section id="contact" class="section contact">
   <div class="container">
-    <h2>Visit Us</h2>
+    <h2 data-i18n="contact-heading">Visit Us</h2>
     <div class="contact-grid">
       <div class="contact-info">
-        <p><strong>Location:</strong>
+        <p><strong data-i18n="label-location">Location:</strong>
           <a href="https://www.google.com/maps?cid=5065393378060084863" target="_blank" rel="noopener">Ιάκωβου Πατάτσου, Αραδίππου, Λάρνακα 7101</a>
-          <br><small>Larnaca, Cyprus &mdash; tap the address for directions</small></p>
-        <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/35797605817">+357 97 605817</a></p>
-        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">@trojansbjj</a></p>
-        <p><strong>Payments:</strong> Cash or Revolut</p>
+          <br><small data-i18n="location-note">Larnaca, Cyprus &mdash; tap the address for directions</small></p>
+        <p><strong data-i18n="label-phone-contact">Phone / WhatsApp:</strong> <a href="https://wa.me/35797605817">+357 97 605817</a></p>
+        <p><strong data-i18n="label-instagram">Instagram:</strong> <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">@trojansbjj</a></p>
+        <p><strong data-i18n="label-payments">Payments:</strong> <span data-i18n="payments-value">Cash or Revolut</span></p>
       </div>
       <div class="map-wrap">
         <!-- Must be an embed URL: a normal maps.google.com page URL is blocked
@@ -347,6 +446,7 @@
              taken from the share link, so the pin lands exactly on the gym. -->
         <iframe
           title="Map showing TROJANS BJJ in Aradippou, Larnaca"
+          data-i18n-title="map-title"
           src="https://www.google.com/maps?cid=5065393378060084863&output=embed"
           width="100%" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -357,14 +457,15 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>&copy; <span id="year"></span> TROJANS BJJ. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> TROJANS BJJ. <span data-i18n="footer-rights">All rights reserved.</span></p>
     <span class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
       <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">Instagram</a>
     </span>
   </div>
 </footer>
 
-<script src="js/script.js?v=10"></script>
+<script src="js/i18n.js?v=12"></script>
+<script src="js/script.js?v=12"></script>
 </body>
 </html>

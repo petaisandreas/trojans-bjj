@@ -1,6 +1,14 @@
 // This file is shared by index.html and privacy.html, so anything specific to
 // one page is guarded - the privacy page has no booking form or coach cards.
 
+// Makes the site installable to a home screen. Registered from the root so
+// its scope covers both pages regardless of which one loads it first.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
+
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
