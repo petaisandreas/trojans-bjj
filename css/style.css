@@ -187,7 +187,14 @@ a:hover { text-decoration: underline; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* Source is a portrait photo (1200x1600) inside a wide, short hero box, so
+     desktop crops it aggressively on the vertical axis. The coaches' faces
+     sit around 28-38% down the frame - measured directly against the
+     hero h1's rendered position, not guessed: 50% put faces right behind
+     the TROJANS headline, so this is pushed further to clear it. On mobile
+     the crop goes the other way (full height shown, sides trimmed instead),
+     where this Y position is a no-op. */
+  object-position: 50% 70%;
 }
 
 .hero-overlay {
@@ -241,7 +248,7 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
   font-size: clamp(.9rem, 2vw, 1.1rem);
   letter-spacing: 6px;
-  color: var(--green-light);
+  color: var(--white);
   text-transform: uppercase;
   margin: 0 0 .6em;
 }
@@ -325,8 +332,8 @@ a:hover { text-decoration: underline; }
      roughly 2:1 on desktop and 1:3 on mobile. */
   object-position: 50% 50%;
   opacity: 0;
-  /* Kept well under the 2.5s hold so each photo settles before the next fade */
-  transition: opacity .7s ease;
+  /* Kept well under the 4s hold so each photo settles before the next fade */
+  transition: opacity 1s ease;
 }
 .about-slideshow img.is-active { opacity: 1; }
 .about-slideshow img.missing { display: none; }
