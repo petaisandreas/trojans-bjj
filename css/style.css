@@ -695,6 +695,20 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (max-width: 700px) {
+  /* On phones the hero photo has zero vertical crop room (it fills by
+     height, not width - see the comment on .hero-photo img), so the
+     50%/70% object-position that keeps faces clear of the headline on
+     desktop does nothing here: object-position-y only has an effect
+     axis where cropping is actually happening. The faces sit at their
+     natural ~28-38% position regardless, which lands under the headline's
+     default centered position. Measured directly against the live hero:
+     dropping padding-bottom to 0 and pushing 40px further down with a
+     translateY clears the gap between text and faces by ~17px. */
+  .hero-content {
+    padding-bottom: 0;
+    transform: translateY(40px);
+  }
+
   .main-nav {
     position: absolute;
     top: 70px;
