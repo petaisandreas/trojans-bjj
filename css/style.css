@@ -165,9 +165,15 @@ a:hover { text-decoration: underline; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: 100vh;
+  /* 100vh minus the sticky header, which sits above this section - without
+     the subtraction the last 72px of the hero fall below the fold, which
+     hides bottom-anchored content. */
+  min-height: calc(100vh - 72px);
   display: flex;
-  align-items: center;
+  /* Bottom-anchored, not centred: the backdrop is a portrait photo of people
+     standing, so the faces are always in the upper half at every viewport
+     width. Centring the text put it across their faces or torsos. */
+  align-items: flex-end;
   overflow: hidden;
   /* Matches the logo file's own black background, so the watermark below
      blends into the section with no visible edges. */
@@ -187,14 +193,15 @@ a:hover { text-decoration: underline; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Source is a portrait photo (1200x1600) inside a wide, short hero box, so
-     desktop crops it aggressively on the vertical axis. The coaches' faces
-     sit around 28-38% down the frame - measured directly against the
-     hero h1's rendered position, not guessed: 50% put faces right behind
-     the TROJANS headline, so this is pushed further to clear it. On mobile
-     the crop goes the other way (full height shown, sides trimmed instead),
-     where this Y position is a no-op. */
-  object-position: 50% 70%;
+  /* Source is a portrait photo (1200x1600) in a wide, short hero box, so the
+     vertical crop is heavy and gets heavier as the viewport widens. The
+     coaches' faces sit ~28-38% down the source frame, and the safe range for
+     this value is bounded by width: at 1280px wide anything past ~0.53 crops
+     their heads off entirely, while lower values keep them in shot at every
+     width tested (1024/1280/1440/1920). Keeping the text clear of them is
+     handled by anchoring the hero text to the bottom, not by pushing this
+     value up - that trade was what cropped the faces out before. */
+  object-position: 50% 30%;
 }
 
 .hero-overlay {
@@ -230,9 +237,8 @@ a:hover { text-decoration: underline; }
   z-index: 2;
   text-align: center;
   width: 100%;
-  /* The hero centres its content; this bottom padding lifts the block
-     above dead centre so it sits higher in the frame. */
-  padding-bottom: clamp(50px, 16vh, 170px);
+  /* Breathing room under the bottom-anchored block. */
+  padding-bottom: clamp(40px, 7vh, 80px);
 }
 
 /* Hero text stays white — it sits over the dark photo overlay */
@@ -695,18 +701,15 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (max-width: 700px) {
-  /* On phones the hero photo has zero vertical crop room (it fills by
-     height, not width - see the comment on .hero-photo img), so the
-     50%/70% object-position that keeps faces clear of the headline on
-     desktop does nothing here: object-position-y only has an effect
-     axis where cropping is actually happening. The faces sit at their
-     natural ~28-38% position regardless, which lands under the headline's
-     default centered position. Measured directly against the live hero:
-     dropping padding-bottom to 0 and pushing 40px further down with a
-     translateY clears the gap between text and faces by ~17px. */
-  .hero-content {
-    padding-bottom: 0;
-    transform: translateY(40px);
+  /* Phones show the photo's full height (it fills by width there), so the
+     whole standing group is in frame and the text sits over the mat below
+     them. Lighten the top of the scrim so the group stays visible, and
+     deepen it only at the bottom where the text needs the contrast. */
+  .hero-overlay {
+    background: linear-gradient(180deg,
+      rgba(0,0,0,.30) 0%,
+      rgba(0,0,0,.35) 45%,
+      rgba(0,0,0,.88) 100%);
   }
 
   .main-nav {
