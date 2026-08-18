@@ -201,7 +201,7 @@ a:hover { text-decoration: underline; }
      width tested (1024/1280/1440/1920). Keeping the text clear of them is
      handled by anchoring the hero text to the bottom, not by pushing this
      value up - that trade was what cropped the faces out before. */
-  object-position: 50% 30%;
+  object-position: 60% 30%;
 }
 
 .hero-overlay {
@@ -232,18 +232,23 @@ a:hover { text-decoration: underline; }
   opacity: .1;
 }
 
+/* The vertical offset that lands the headline on the coaches' chests is set
+   by positionHeroText() in js/script.js, which measures the photo's actual
+   crop at the current window size. A fixed value here cannot track it: the
+   crop shifts continuously as the viewport changes shape. This is only the
+   resting position used before that runs (and if JS is unavailable). */
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   width: 100%;
-  /* Breathing room under the bottom-anchored block. */
-  padding-bottom: clamp(40px, 7vh, 80px);
+  padding-bottom: 18px;
 }
 
 /* Hero text stays white — it sits over the dark photo overlay */
 .hero h1 {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(3rem, 11vw, 6.5rem);
+  letter-spacing: 4px;
   color: var(--white);
   margin-bottom: .2em;
 }
@@ -263,7 +268,9 @@ a:hover { text-decoration: underline; }
   color: var(--white);
   font-size: 1.2rem;
   letter-spacing: 1px;
-  margin-bottom: 2em;
+  /* Tightened from 2em: with the headline pinned to the coaches' chests the
+     block sits lower, and the old gap pushed the button past the fold. */
+  margin-bottom: 1.2em;
 }
 
 .hero-buttons {
@@ -701,10 +708,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (max-width: 700px) {
-  /* Phones show the photo's full height (it fills by width there), so the
-     whole standing group is in frame and the text sits over the mat below
-     them. Lighten the top of the scrim so the group stays visible, and
-     deepen it only at the bottom where the text needs the contrast. */
+  /* Lighten the top of the scrim so the group stays visible, and deepen it
+     lower down where the text needs the contrast. */
   .hero-overlay {
     background: linear-gradient(180deg,
       rgba(0,0,0,.30) 0%,

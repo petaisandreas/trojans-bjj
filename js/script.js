@@ -34,6 +34,64 @@ document.querySelectorAll('.coach-toggle').forEach(toggle => {
   });
 });
 
+// Keeps the hero headline sitting on the coaches' chests at any window size.
+//
+// Doing this in CSS alone needs a hardcoded offset per breakpoint, and those
+// only hold at the exact sizes they were measured at - the hero photo is
+// portrait inside a box whose shape changes with the viewport, so how much of
+// the photo is cropped (and therefore where the chests land on screen) moves
+// continuously as the window resizes. Every fixed value tried here was correct
+// at one width and wrong at the next. This measures the actual crop instead.
+const HERO_CHEST_POINT = 0.46; // chests sit ~43-49% down the source photo
+
+function positionHeroText() {
+  const hero = document.querySelector('.hero');
+  const content = document.querySelector('.hero-content');
+  const h1 = hero && hero.querySelector('h1');
+  const img = document.querySelector('.hero-photo img');
+  if (!hero || !content || !h1 || !img || !img.naturalWidth) return;
+
+  // Measure with the offset cleared, or each run compounds the last one.
+  content.style.transform = 'none';
+
+  const heroRect = hero.getBoundingClientRect();
+  const h1Rect = h1.getBoundingClientRect();
+
+  // Recreate what object-fit: cover does, to find where the chests render.
+  const scale = Math.max(heroRect.width / img.naturalWidth,
+                         heroRect.height / img.naturalHeight);
+  const scaledHeight = img.naturalHeight * scale;
+  const objectY = (parseFloat(getComputedStyle(img).objectPosition.split(' ')[1]) || 50) / 100;
+  const croppedOffTop = (scaledHeight - heroRect.height) * objectY;
+  const chestY = HERO_CHEST_POINT * scaledHeight - croppedOffTop;
+
+  const headlineY = (h1Rect.top - heroRect.top) + h1Rect.height / 2;
+  let shift = chestY - headlineY;
+
+  // Never at the cost of usability: the button must stay above the fold and
+  // the headline must stay clear of the header.
+  const btn = content.querySelector('.btn-hero');
+  const blockBottom = (btn || h1).getBoundingClientRect().bottom - heroRect.top;
+  const maxDown = heroRect.height - blockBottom - 16;
+  const maxUp = -((h1Rect.top - heroRect.top) - 16);
+  shift = Math.max(Math.min(shift, maxDown), maxUp);
+
+  content.style.transform = `translateY(${Math.round(shift)}px)`;
+}
+
+if (document.querySelector('.hero-photo img')) {
+  const heroImg = document.querySelector('.hero-photo img');
+  if (heroImg.complete) positionHeroText();
+  heroImg.addEventListener('load', positionHeroText);
+  window.addEventListener('load', positionHeroText);
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(positionHeroText, 100);
+  });
+}
+
 // About section background slideshow
 const aboutSlideshow = document.getElementById('about-slideshow');
 if (aboutSlideshow) {
