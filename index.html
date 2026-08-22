@@ -56,7 +56,7 @@
 </script>
 <!-- Bump ?v= whenever style.css or script.js changes so browsers fetch the new file
      instead of serving a cached copy. -->
-<link rel="stylesheet" href="css/style.css?v=27">
+<link rel="stylesheet" href="css/style.css?v=28">
 
 <!-- Local business data for Google Search/Maps rich results. Class-time
      blocks come straight from the schedule table above, not invented.
@@ -386,7 +386,7 @@
         <label for="payment" data-i18n="label-payment">Payment Method</label>
         <select id="payment" name="payment" required>
           <option value="" data-i18n="option-select">Select an option&hellip;</option>
-          <option value="Cash" data-i18n="option-cash">Cash (at the academy)</option>
+          <!-- Revolut is the only accepted payment method. -->
           <option value="Revolut" data-i18n="option-revolut">Revolut</option>
         </select>
         <p class="form-hint" id="revolut-hint" hidden data-i18n="revolut-hint">We&rsquo;ll send you our Revolut details on WhatsApp when we confirm your booking.</p>
@@ -433,7 +433,7 @@
           <br><small data-i18n="location-note">Larnaca, Cyprus &mdash; tap the address for directions</small></p>
         <p><strong data-i18n="label-phone-contact">Phone / WhatsApp:</strong> <a href="https://wa.me/35797605817">+357 97 605817</a></p>
         <p><strong data-i18n="label-instagram">Instagram:</strong> <a href="https://www.instagram.com/trojansbjj" target="_blank" rel="noopener">@trojansbjj</a></p>
-        <p><strong data-i18n="label-payments">Payments:</strong> <span data-i18n="payments-value">Cash or Revolut</span></p>
+        <p><strong data-i18n="label-payments">Payments:</strong> <span data-i18n="payments-value">Revolut</span></p>
       </div>
       <div class="map-wrap">
         <!-- Must be an embed URL: a normal maps.google.com page URL is blocked
@@ -460,7 +460,7 @@
   </div>
 </footer>
 
-<script src="js/i18n.js?v=27"></script>
-<script src="js/script.js?v=27"></script>
+<script src="js/i18n.js?v=28"></script>
+<script src="js/script.js?v=28"></script>
 </body>
 </html>

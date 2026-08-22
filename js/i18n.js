@@ -102,7 +102,6 @@ const TRANSLATIONS = {
     'option-private-venizelos': 'Private Class &mdash; Venizelos',
     'trial-hint': 'Trial classes are for first-timers only &mdash; one per person.',
     'label-payment': 'Payment Method',
-    'option-cash': 'Cash (at the academy)',
     'option-revolut': 'Revolut',
     'revolut-hint': 'We&rsquo;ll send you our Revolut details on WhatsApp when we confirm your booking.',
     'label-date': 'Preferred Date',
@@ -119,7 +118,7 @@ const TRANSLATIONS = {
     'label-phone-contact': 'Phone / WhatsApp:',
     'label-instagram': 'Instagram:',
     'label-payments': 'Payments:',
-    'payments-value': 'Cash or Revolut',
+    'payments-value': 'Revolut',
     'map-title': 'Map showing TROJANS BJJ in Aradippou, Larnaca',
 
     'footer-rights': 'All rights reserved.',
@@ -254,7 +253,6 @@ const TRANSLATIONS = {
     'option-private-venizelos': 'Ιδιαίτερο Μάθημα &mdash; Venizelos',
     'trial-hint': 'Τα δοκιμαστικά μαθήματα είναι μόνο για όσους έρχονται για πρώτη φορά &mdash; ένα ανά άτομο.',
     'label-payment': 'Τρόπος Πληρωμής',
-    'option-cash': 'Μετρητά (στην ακαδημία)',
     'option-revolut': 'Revolut',
     'revolut-hint': 'Θα σας στείλουμε τα στοιχεία μας στο Revolut μέσω WhatsApp μόλις επιβεβαιώσουμε την κράτησή σας.',
     'label-date': 'Προτιμώμενη Ημερομηνία',
@@ -271,7 +269,7 @@ const TRANSLATIONS = {
     'label-phone-contact': 'Τηλέφωνο / WhatsApp:',
     'label-instagram': 'Instagram:',
     'label-payments': 'Πληρωμές:',
-    'payments-value': 'Μετρητά ή Revolut',
+    'payments-value': 'Revolut',
     'map-title': 'Χάρτης με την τοποθεσία της TROJANS BJJ στην Αραδίππου, Λάρνακα',
 
     'footer-rights': 'Με επιφύλαξη παντός δικαιώματος.',
