@@ -173,6 +173,7 @@ const TRANSLATIONS = {
     'program-private-tagline': 'One-on-one coaching, built around you.',
     'program-private-body': `
       <p>Private sessions with Eleftheria or Venizelos, tailored to your goals and your pace. Ideal if you want to accelerate your progress, work on a specific area of your game, or start training in a one-to-one setting before joining group classes.</p>
+      <p>They are just as valuable if you are a competitor looking to sharpen your skills. Private lessons are open to every level.</p>
     `,
 
     'schedule-adults': 'Adults',
@@ -358,6 +359,7 @@ const TRANSLATIONS = {
     'program-private-tagline': 'Προσωπική προπόνηση, φτιαγμένη για εσένα.',
     'program-private-body': `
       <p>Ιδιαίτερα μαθήματα με την Eleftheria ή τον Venizelos, προσαρμοσμένα στους στόχους και τον ρυθμό σου. Ιδανικά αν θέλεις να επιταχύνεις την πρόοδό σου, να δουλέψεις σε ένα συγκεκριμένο κομμάτι του παιχνιδιού σου, ή να ξεκινήσεις προπόνηση σε προσωπικό περιβάλλον πριν ενταχθείς στα ομαδικά μαθήματα.</p>
+      <p>Είναι εξίσου πολύτιμα αν είσαι αγωνιστής και θέλεις να τελειοποιήσεις τις ικανότητές σου. Τα ιδιαίτερα μαθήματα απευθύνονται σε όλα τα επίπεδα.</p>
     `,
 
     'schedule-adults': 'Ενήλικες',
