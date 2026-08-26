@@ -24,8 +24,8 @@ if (navToggle && mainNav) {
   });
 }
 
-// Coach cards -> expanding bio dropdown
-document.querySelectorAll('.coach-toggle').forEach(toggle => {
+// Expanding panels - coach bios and program descriptions share the behaviour
+document.querySelectorAll('.coach-toggle, .program-toggle').forEach(toggle => {
   const bio = document.getElementById(toggle.getAttribute('aria-controls'));
   toggle.addEventListener('click', () => {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';

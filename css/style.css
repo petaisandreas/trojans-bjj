@@ -369,26 +369,64 @@ a:hover { text-decoration: underline; }
   text-shadow: 0 1px 3px rgba(255,255,255,.95), 0 0 14px rgba(255,255,255,.85);
 }
 
-.about-highlights {
+/* Programs. Each card shows its title and one-line tagline, with the full
+   description behind a toggle - the copy runs several paragraphs per program,
+   which would bury the schedule if all four were expanded by default. */
+.program-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
-  margin-top: 40px;
+  align-items: start;
 }
-.highlight-card {
-  background: rgba(255,255,255,.95);
+
+.program-card {
+  background: var(--surface-2);
   border: 1px solid var(--border);
   border-left: 4px solid var(--green);
-  padding: 24px;
   border-radius: var(--radius);
-  transition: transform .2s ease, box-shadow .2s ease;
+  padding: 24px;
 }
-.highlight-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.10);
+.program-card h3 {
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  margin-bottom: .35em;
 }
-.highlight-card h3 { color: var(--green-dark); font-size: 1.05rem; }
-.highlight-card p { margin: 0; font-size: .95rem; }
+
+.program-tagline {
+  color: var(--text);
+  font-weight: 600;
+  font-size: .95rem;
+  margin: 0 0 16px;
+}
+
+.program-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--green);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .72rem;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.program-toggle:hover { background: var(--green-dark); }
+.program-toggle[aria-expanded="true"] .coach-chevron {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.program-body { margin-top: 18px; }
+.program-body p {
+  font-size: .93rem;
+  margin: 0 0 1em;
+}
+.program-body p:last-child { margin-bottom: 0; }
 
 /* Coaches */
 .coach-grid {
@@ -590,6 +628,17 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--green);
 }
 .pill-openmat { border-color: var(--gold); }
+.pill-leglocks { border-color: #7a5ba6; }
+.pill-mma { border-color: #b3423a; }
+.pill-littleheroes { border-color: var(--gold); background: #fdf7e6; }
+
+/* Subheadings splitting the adult and kids timetables */
+.schedule-sub {
+  font-size: 1.05rem;
+  color: var(--green-dark);
+  margin: 32px 0 12px;
+}
+.schedule-sub:first-of-type { margin-top: 20px; }
 
 /* Booking form */
 .booking-form {
