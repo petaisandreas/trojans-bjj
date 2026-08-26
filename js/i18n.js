@@ -58,7 +58,9 @@ const TRANSLATIONS = {
       <li>Greece National Champion</li>
     `,
     'achievements-louis': `
-      <li>MMA fighter and Coach</li>
+      <li>Abu Dhabi Grand Slam Gold Medallist <span class="nw">2016</span></li>
+      <li>Pankration &mdash; 2nd place</li>
+      <li>Former professional MMA fighter and coach</li>
     `,
     'achievements-orestis': `
       <li>Member of the Greek National Wrestling Team, 1997&ndash;2009</li>
@@ -244,7 +246,9 @@ const TRANSLATIONS = {
       <li>Πρωταθλητής Ελλάδας</li>
     `,
     'achievements-louis': `
-      <li>Αθλητής και Προπονητής MMA</li>
+      <li>Χρυσό μετάλλιο Abu Dhabi Grand Slam <span class="nw">2016</span></li>
+      <li>Παγκράτιο &mdash; 2η θέση</li>
+      <li>Πρώην επαγγελματίας αθλητής MMA και προπονητής</li>
     `,
     'achievements-orestis': `
       <li>Μέλος της Εθνικής Ομάδας Πάλης της Ελλάδας, 1997&ndash;2009</li>
