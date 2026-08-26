@@ -188,12 +188,12 @@ const TRANSLATIONS = {
     'p-wrestling': 'Wrestling<br>19:00&ndash;20:30',
     'p-mma': 'Grappling for MMA<br>19:00&ndash;20:30',
     'p-openmat': 'Open Mat<br>11:00&ndash;12:00<br><small>on demand</small>',
-    'p-lh-sat': 'Little Heroes 3&ndash;6<br>09:00&ndash;10:00',
-    'p-kidsgi-sat': 'Kids Gi 7&ndash;12<br>10:00&ndash;11:00',
-    'p-lh-thu': 'Little Heroes 3&ndash;6<br>16:00&ndash;17:00',
-    'p-kidsgi': 'Kids Gi 7&ndash;12<br>17:00&ndash;18:00',
-    'p-kidsgi-fund': 'Kids Gi Fundamentals<br>17:00&ndash;18:00',
-    'p-kidsnogi-fund': 'Kids No Gi Fundamentals<br>17:00&ndash;18:00',
+    'p-lh-sat': 'Little Heroes<br>Ages 3&ndash;6<br>09:00&ndash;10:00',
+    'p-kidsgi-sat': 'Kids Gi<br>Ages 7&ndash;12<br>10:00&ndash;11:00',
+    'p-lh-thu': 'Little Heroes<br>Ages 3&ndash;6<br>16:00&ndash;17:00',
+    'p-kidsgi': 'Kids Gi<br>Ages 7&ndash;12<br>17:00&ndash;18:00',
+    'p-kidsgi-fund': 'Kids Gi Fundamentals<br>Ages 7&ndash;12<br>17:00&ndash;18:00',
+    'p-kidsnogi-fund': 'Kids No Gi Fundamentals<br>Ages 7&ndash;12<br>17:00&ndash;18:00',
   },
 
   el: {
@@ -374,12 +374,12 @@ const TRANSLATIONS = {
     'p-wrestling': 'Πάλη<br>19:00&ndash;20:30',
     'p-mma': 'Grappling για MMA<br>19:00&ndash;20:30',
     'p-openmat': 'Open Mat<br>11:00&ndash;12:00<br><small>κατόπιν ζήτησης</small>',
-    'p-lh-sat': 'Little Heroes 3&ndash;6<br>09:00&ndash;10:00',
-    'p-kidsgi-sat': 'Παιδικό Gi 7&ndash;12<br>10:00&ndash;11:00',
-    'p-lh-thu': 'Little Heroes 3&ndash;6<br>16:00&ndash;17:00',
-    'p-kidsgi': 'Παιδικό Gi 7&ndash;12<br>17:00&ndash;18:00',
-    'p-kidsgi-fund': 'Παιδικό Gi Fundamentals<br>17:00&ndash;18:00',
-    'p-kidsnogi-fund': 'Παιδικό No Gi Fundamentals<br>17:00&ndash;18:00',
+    'p-lh-sat': 'Little Heroes<br>Ηλικίες 3&ndash;6<br>09:00&ndash;10:00',
+    'p-kidsgi-sat': 'Παιδικό Gi<br>Ηλικίες 7&ndash;12<br>10:00&ndash;11:00',
+    'p-lh-thu': 'Little Heroes<br>Ηλικίες 3&ndash;6<br>16:00&ndash;17:00',
+    'p-kidsgi': 'Παιδικό Gi<br>Ηλικίες 7&ndash;12<br>17:00&ndash;18:00',
+    'p-kidsgi-fund': 'Παιδικό Gi Fundamentals<br>Ηλικίες 7&ndash;12<br>17:00&ndash;18:00',
+    'p-kidsnogi-fund': 'Παιδικό No Gi Fundamentals<br>Ηλικίες 7&ndash;12<br>17:00&ndash;18:00',
   }
 };
 
