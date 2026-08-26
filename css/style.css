@@ -372,11 +372,14 @@ a:hover { text-decoration: underline; }
 /* Programs. Each card shows its title and one-line tagline, with the full
    description behind a toggle - the copy runs several paragraphs per program,
    which would bury the schedule if all four were expanded by default. */
+/* Stacked, not a grid. Side-by-side cards share a row height, so opening one
+   stretched the whole row and left the others floating beside a tall gap -
+   it read as broken. Stacked full-width, an open panel simply pushes the
+   next program down, which is what an accordion should look like. */
 .program-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .program-card {
@@ -384,7 +387,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-left: 4px solid var(--green);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 22px 26px;
 }
 .program-card h3 {
   color: var(--green-dark);
@@ -421,7 +424,11 @@ a:hover { text-decoration: underline; }
   transform: rotate(225deg) translate(-2px, -2px);
 }
 
-.program-body { margin-top: 18px; }
+.program-body {
+  margin-top: 18px;
+  /* Full-width lines are hard to read on a wide screen, so cap the measure. */
+  max-width: 68ch;
+}
 .program-body p {
   font-size: .93rem;
   margin: 0 0 1em;
