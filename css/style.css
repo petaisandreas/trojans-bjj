@@ -634,6 +634,12 @@ a:hover { text-decoration: underline; }
   background: var(--surface);
   border: 1px solid var(--green);
 }
+/* Keeps a range together on one line. A line is allowed to break after an en
+   dash, which split "Ages 7-12" and "17:00-18:00" across two lines in narrow
+   mobile columns. Applied to the ranges only, so long class names can still
+   wrap and the table does not get wider than it needs to be. */
+.nw { white-space: nowrap; }
+
 .pill-openmat { border-color: var(--gold); }
 .pill-leglocks { border-color: #7a5ba6; }
 .pill-mma { border-color: #b3423a; }
